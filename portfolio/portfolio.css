@@ -1,0 +1,462 @@
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(NEUMORPHIC_CIRCLES_BACKGROUND.jpg);
+    color: #fff;
+}
+
+/* Header Section */
+#header {
+    width: 100%;
+    height: 100vh;
+   
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 140px;
+    color: aliceblue;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Header Text */
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+.header-text h1 span {
+    color: rgb(119, 119, 168);
+}
+
+/* About Section */
+#about {
+    padding: 80px 10%;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: center; /* Centers image */
+}
+
+.about-col-1 img {
+    width: 100%;
+    max-width: 350px; /* Limits size */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Tabs Section */
+.tab-title {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 50px;
+}
+
+/* Table Content */
+.table-content ul {
+    list-style: none;
+}
+
+.table-content ul li {
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .about-col-1 img {
+        max-width: 280px;
+    }
+
+    .sub-title {
+        font-size: 45px;
+    }
+}
+
+.table-content ul li span{
+    color:#b54769;
+    font-size: 14px;
+}
+.table-content{
+    display: none;
+}
+.table-content.active-tab{
+    display: block;
+}
+
+/*..... services*/
+#Services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr) );
+    grid-gap: 40px;
+    margin-top: 50px;
+
+}
+.services-list div{
+    background:rgb(20, 20, 27);
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+.services-list div h2{url(portfolio.css)
+    font-size: 30px;
+    font-weight:500 ;
+    margin-bottom:15px;
+
+
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top:20px;
+    display:inline-block;
+}
+.services-list div:hover{
+    background: #ff004f;
+    transform: translateY(-10px)
+
+}
+#portfolio {
+    padding: 50px 0;
+   
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.sub-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.work {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.work img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 20px;
+    text-align: center;
+}
+
+.work:hover .layer {
+    opacity: 1;
+}
+
+.layer h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ff004f;
+}
+
+.layer p {
+    font-size: 16px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.layer a {
+    color: #ff004f;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+/* contact */
+/* CONTACT SECTION WRAPPER */
+#Contact {
+    display: flex;
+    flex-wrap: wrap;       /* Allows columns to stack on smaller screens */
+    align-items: flex-start;
+    padding: 50px 10%;
+    background-color: #111; /* Optional: dark background */
+    color: #fff;
+}
+
+/* LEFT COLUMN */
+.contact-left {
+    flex-basis: 35%;
+    margin-right: 15px;    /* Adds spacing to the right */
+}
+
+.contact-left p {
+    margin-top: 30px;      /* Corrected the margin-top property */
+}
+
+.contact-left p i {
+    color: #ff004f;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    margin-top: 30px;
+}
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+url(portfolio.css)margin-right: 20px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover {
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+/* DOWNLOAD CV BUTTON */
+.btn.btn2 {
+    display: inline-block;
+    background: #ff004f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;       /* Adds space above the button */
+    transition: background 0.3s;
+}
+.btn.btn2:hover {
+    background: #fff;
+    color: #ff004f;
+}
+
+/* RIGHT COLUMN (FORM) */
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-right form {
+    width: 100%;
+    max-width: 400px;       /* Optional: limits form width for a nicer layout */
+}
+
+/* FORM FIELDS */
+.contact-right form input,
+.contact-right form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #222;       /* Dark background for input fields */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* SUBMIT BUTTON */
+.contact-right form button {
+    background: #ff004f;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+.contact-right form button:hover {
+    background: #fff;
+    color: #ff004f;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+    #Contact {
+        flex-direction: column; /* Stack columns */
+        padding: 30px;
+    }
+    .contact-left {
+        margin-right: 0;       /* Remove horizontal spacing on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #222;
+        width: 200px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-active {
+        display: flex !important;
+    }
+}
+@media (max-width: 768px) {
+    .header-text {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .header-text h1 {
+        font-size: 40px;
+    }
+}
